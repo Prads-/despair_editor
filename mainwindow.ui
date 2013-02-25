@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>despairEditor</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="loutMain" columnstretch="0,1">
+      <item row="0" column="0">
+       <widget class="SourceTreeWidget" name="treeSource">
+        <property name="dragDropMode">
+         <enum>QAbstractItemView::InternalMove</enum>
+        </property>
+        <attribute name="headerVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="headerStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string notr="true">1</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="SourcePlainText" name="txtSource">
+        <property name="font">
+         <font>
+          <family>Courier New</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="lineWrapMode">
+         <enum>QPlainTextEdit::NoWrap</enum>
+        </property>
+        <property name="tabStopWidth">
+         <number>30</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>830</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAddNewSource"/>
+    <addaction name="actionNewProject"/>
+    <addaction name="actionAddNewVirtualFolder"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionCloseProject"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionDeleteSource"/>
+    <addaction name="separator"/>
+    <addaction name="actionFrameLength"/>
+    <addaction name="actionMemorySize"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionInfo"/>
+   </widget>
+   <widget class="QMenu" name="menuBuild">
+    <property name="title">
+     <string>Build</string>
+    </property>
+    <addaction name="actionBuild"/>
+    <addaction name="actionBuildAndRun"/>
+    <addaction name="actionRun"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionFindAndReplace"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuBuild"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAddNewSource"/>
+   <addaction name="actionNewProject"/>
+   <addaction name="actionAddNewVirtualFolder"/>
+   <addaction name="separator"/>
+   <addaction name="actionFrameLength"/>
+   <addaction name="actionMemorySize"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionCloseProject"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionDeleteSource"/>
+   <addaction name="separator"/>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionCut"/>
+   <addaction name="actionPaste"/>
+   <addaction name="actionFindAndReplace"/>
+   <addaction name="separator"/>
+   <addaction name="actionRun"/>
+   <addaction name="actionBuildAndRun"/>
+   <addaction name="actionBuild"/>
+   <addaction name="separator"/>
+   <addaction name="actionInfo"/>
+  </widget>
+  <action name="actionAddNewSource">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/addSource.png</normaloff>:/icons/icons/addSource.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add New Source</string>
+   </property>
+   <property name="toolTip">
+    <string>Add New Source</string>
+   </property>
+  </action>
+  <action name="actionNewProject">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/addProject.png</normaloff>:/icons/icons/addProject.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+   <property name="toolTip">
+    <string>New Project</string>
+   </property>
+  </action>
+  <action name="actionAddNewVirtualFolder">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/newFolder.png</normaloff>:/icons/icons/newFolder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add New Virtual Folder</string>
+   </property>
+   <property name="toolTip">
+    <string>Add New Virtual Folder</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/open.png</normaloff>:/icons/icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+   <property name="toolTip">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/save.png</normaloff>:/icons/icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+   <property name="toolTip">
+    <string>Save Project</string>
+   </property>
+  </action>
+  <action name="actionDeleteSource">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/deleteSource.png</normaloff>:/icons/icons/deleteSource.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Source</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Source File</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/info.png</normaloff>:/icons/icons/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="toolTip">
+    <string>About despairEditor</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/run.png</normaloff>:/icons/icons/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+   <property name="toolTip">
+    <string>Run</string>
+   </property>
+  </action>
+  <action name="actionBuildAndRun">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/buildAndRun.png</normaloff>:/icons/icons/buildAndRun.png</iconset>
+   </property>
+   <property name="text">
+    <string>Build And Run</string>
+   </property>
+   <property name="toolTip">
+    <string>Build and Run</string>
+   </property>
+  </action>
+  <action name="actionBuild">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/build.png</normaloff>:/icons/icons/build.png</iconset>
+   </property>
+   <property name="text">
+    <string>Build</string>
+   </property>
+   <property name="toolTip">
+    <string>Build</string>
+   </property>
+  </action>
+  <action name="actionCloseProject">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close Project</string>
+   </property>
+   <property name="toolTip">
+    <string>Close Project</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionFindAndReplace">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/find.png</normaloff>:/icons/icons/find.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find and Replace</string>
+   </property>
+   <property name="toolTip">
+    <string>FindAndReplace</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/undo.png</normaloff>:/icons/icons/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="toolTip">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/redo.png</normaloff>:/icons/icons/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="toolTip">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/copy.png</normaloff>:/icons/icons/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/cut.png</normaloff>:/icons/icons/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="toolTip">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/paste.png</normaloff>:/icons/icons/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="toolTip">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionFrameLength">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/frameLength.png</normaloff>:/icons/icons/frameLength.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change Frame Length</string>
+   </property>
+   <property name="toolTip">
+    <string>Change Frame Length</string>
+   </property>
+  </action>
+  <action name="actionMemorySize">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/memory.png</normaloff>:/icons/icons/memory.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Memory Size</string>
+   </property>
+   <property name="toolTip">
+    <string>Memory Size</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>SourceTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>sourcetreewidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SourcePlainText</class>
+   <extends>QPlainTextEdit</extends>
+   <header>sourceplaintext.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

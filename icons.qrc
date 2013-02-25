@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/addSource.png</file>
+        <file>icons/cancel.png</file>
+        <file>icons/deleteSource.png</file>
+        <file>icons/folder.png</file>
+        <file>icons/newFolder.png</file>
+        <file>icons/ok.png</file>
+        <file>icons/save.png</file>
+        <file>icons/source.png</file>
+        <file>icons/open.png</file>
+        <file>icons/info.png</file>
+        <file>icons/run.png</file>
+        <file>icons/build.png</file>
+        <file>icons/buildAndRun.png</file>
+        <file>icons/addFolderBig.png</file>
+        <file>icons/addSourceBig.png</file>
+        <file>icons/infoBig.png</file>
+        <file>icons/addProject.png</file>
+        <file>icons/addProjectBig.png</file>
+        <file>icons/close.png</file>
+        <file>icons/find.png</file>
+        <file>icons/findBig.png</file>
+        <file>icons/redo.png</file>
+        <file>icons/undo.png</file>
+        <file>icons/copy.png</file>
+        <file>icons/cut.png</file>
+        <file>icons/paste.png</file>
+        <file>icons/frameLength.png</file>
+        <file>icons/frameLengthBig.png</file>
+        <file>icons/compilerError.png</file>
+        <file>icons/memory.png</file>
+        <file>icons/memoryBig.png</file>
+    </qresource>
+</RCC>
